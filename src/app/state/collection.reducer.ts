@@ -13,3 +13,6 @@ const _collectionReducer = createReducer(
     return [...state, bookId];
   })
 );
+export function collectionReducer(state, actions) {
+  return _collectionReducer(state, actions);
+}
