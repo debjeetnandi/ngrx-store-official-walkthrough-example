@@ -1,10 +1,9 @@
 import { createReducer, on } from '@ngrx/store';
-
 import { addBook, removeBook } from './books.actions';
 
 export const initialState: ReadonlyArray<string> = [];
 
-const _collectionReducer = createReducer(
+export const collectionReducer = createReducer(
   initialState,
   on(removeBook, (state, { bookId }) => state.filter((id) => id !== bookId)),
   on(addBook, (state, { bookId }) => {
@@ -13,6 +12,3 @@ const _collectionReducer = createReducer(
     return [...state, bookId];
   })
 );
-export function collectionReducer(state, actions) {
-  return _collectionReducer(state, actions);
-}

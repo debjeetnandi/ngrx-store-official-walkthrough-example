@@ -1,5 +1,4 @@
 import { createAction, props } from '@ngrx/store';
-
 import { Book } from '../book-list/books.model';
 
 export const addBook = createAction(
@@ -13,6 +12,6 @@ export const removeBook = createAction(
 );
 
 export const retrievedBookList = createAction(
-  '[Book List/API ] Retrieve Book Success',
+  '[Book List/API] Retrieve Books Success',
   props<{ books: ReadonlyArray<Book> }>()
 );
